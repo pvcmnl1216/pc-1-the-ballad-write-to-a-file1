@@ -4,9 +4,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class Ballad {
-    public void writePoemToAFile(String fileName, String data){
 
-    }
 
     public static void main(String[] args) {
 
@@ -24,6 +22,17 @@ public class Ballad {
                 "I sprang from the bed to see what was the matter.\n" +
                 "Away to the window I flew like a flash,\n" +
                 "Tore open the shutters and threw up the sash.\n";
-        // Call the function and write the ballad to the file
+        Ballad ballad1 = new Ballad();
+        ballad1.writePoemToAFile("src/main/resources/ballad.txt", ballad);
+    }
+    public void writePoemToAFile(String fileName, String data) {
+        byte[] bytes = data.getBytes();
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream(fileName, true);
+            fileOutputStream.write(bytes);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
+
