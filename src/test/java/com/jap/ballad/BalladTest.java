@@ -15,11 +15,11 @@ public class BalladTest {
     Ballad ballad = null;
     @Before
     public void setUp(){
-ballad = new Ballad();
+        ballad = new Ballad();
     }
     @After
     public void tearDown(){
-    ballad = null;
+        ballad = null;
     }
 
     @Test
@@ -46,6 +46,6 @@ ballad = new Ballad();
         while (scanner.hasNextLine()) {
             balladData = balladData.concat("\n"+scanner.nextLine());
         }
-    assertEquals("Data from file does not match",balladText.trim(),balladData.trim());
+        assertEquals("Data from file does not match",balladText.trim(),balladData.trim());
     }
-    }
+}
